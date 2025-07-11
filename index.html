@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coming Soon - Luxe Fashion House</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Prata&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #e8c8b0;
+      --secondary-color: #1a1a1a;
+      --accent-color: #c4a287;
+      --text-light: #f8f8f8;
+      --text-dark: #333333;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-image: url('https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      min-height: 100vh;
+      color: var(--text-light);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 2rem;
+      position: relative;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 100%);
+      z-index: 1;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .content {
+      max-width: 600px;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .logo {
+      font-family: 'Prata', serif;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: var(--primary-color);
+      letter-spacing: 2px;
+    }
+
+    h1 {
+      font-family: 'Prata', serif;
+      font-size: 3.5rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+      font-weight: normal;
+    }
+
+    .tagline {
+      font-size: 1.3rem;
+      margin-bottom: 2.5rem;
+      line-height: 1.6;
+      font-weight: 300;
+    }
+
+    .divider {
+      width: 80px;
+      height: 2px;
+      background-color: var(--primary-color);
+      margin: 2rem 0;
+    }
+
+    .timer-container {
+      margin: 3rem 0;
+    }
+
+    .timer-title {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 1rem;
+      color: var(--primary-color);
+    }
+
+    .timer {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .timer-unit {
+      text-align: center;
+    }
+
+    .timer-value {
+      font-family: 'Prata', serif;
+      font-size: 3rem;
+      line-height: 1;
+      color: var(--primary-color);
+    }
+
+    .timer-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .subscribe {
+      margin: 3rem 0;
+    }
+
+    .subscribe-title {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .form-group {
+      display: flex;
+      max-width: 400px;
+    }
+
+    input {
+      flex: 1;
+      padding: 12px 15px;
+      border: none;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      outline: none;
+    }
+
+    button {
+      background-color: var(--primary-color);
+      color: var(--text-dark);
+      border: none;
+      padding: 0 25px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background-color: var(--accent-color);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .social-links a {
+      color: var(--text-light);
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+    }
+
+    .social-links a:hover {
+      color: var(--primary-color);
+      transform: translateY(-3px);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+      
+      .tagline {
+        font-size: 1.1rem;
+      }
+      
+      .timer {
+        gap: 1rem;
+      }
+      
+      .timer-value {
+        font-size: 2rem;
+      }
+      
+      .form-group {
+        flex-direction: column;
+      }
+      
+      button {
+        padding: 12px 15px;
+        margin-top: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay"></div>
+  
+  <div class="container">
+    <div class="content">
+      <div class="logo">LUXE</div>
+      <h1>Redefining Elegance</h1>
+      <p class="tagline">Our exclusive collection is launching soon. Experience timeless designs crafted with passion and precision.</p>
+      
+      <div class="divider"></div>
+      
+      <div class="timer-container">
+        <div class="timer-title">Launching In</div>
+        <div class="timer" id="countdown">
+          <div class="timer-unit">
+            <div class="timer-value" id="days">00</div>
+            <div class="timer-label">Days</div>
+          </div>
+          <div class="timer-unit">
+            <div class="timer-value" id="hours">00</div>
+            <div class="timer-label">Hours</div>
+          </div>
+          <div class="timer-unit">
+            <div class="timer-value" id="minutes">00</div>
+            <div class="timer-label">Minutes</div>
+          </div>
+          <div class="timer-unit">
+            <div class="timer-value" id="seconds">00</div>
+            <div class="timer-label">Seconds</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="subscribe">
+        <div class="subscribe-title">Be the first to know when we launch</div>
+        <form class="form-group">
+          <input type="email" placeholder="Your email address" required>
+          <button type="submit">Notify Me</button>
+        </form>
+      </div>
+      
+      <div class="social-links">
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Countdown Timer
+    const launchDate = new Date();
+    launchDate.setDate(launchDate.getDate() + 20); // Set to 20 days from now
+    
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const timeLeft = launchDate - now;
+      
+      if (timeLeft < 0) {
+        document.getElementById('days').innerText = '00';
+        document.getElementById('hours').innerText = '00';
+        document.getElementById('minutes').innerText = '00';
+        document.getElementById('seconds').innerText = '00';
+        return;
+      }
+      
+      const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+      
+      document.getElementById('days').innerText = days.toString().padStart(2, '0');
+      document.getElementById('hours').innerText = hours.toString().padStart(2, '0');
+      document.getElementById('minutes').innerText = minutes.toString().padStart(2, '0');
+      document.getElementById('seconds').innerText = seconds.toString().padStart(2, '0');
+    }
+    
+    // Update countdown every second
+    setInterval(updateCountdown, 1000);
+    updateCountdown(); // Initial call
+    
+    // Form submission
+    document.querySelector('form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const email = this.querySelector('input').value;
+      // Here you would typically send the email to your server
+      alert(`Thank you! We'll notify you at ${email} when we launch.`);
+      this.querySelector('input').value = '';
+    });
+  </script>
+</body>
+</html>
