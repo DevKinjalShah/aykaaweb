@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://devkinjalshah.github.io/aykaaweb/sitemap.xml
