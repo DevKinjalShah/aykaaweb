@@ -353,7 +353,7 @@
       <div class="socials">
         <a href="https://www.instagram.com/houseofaykaa.in/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
         <a href="https://facebook.com/houseofaykaa" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://pinterest.com/houseofaykaa" target="_blank" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+        <a href="https://in.pinterest.com/houseofaykaa/" target="_blank" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
         <a href="mailto:info@houseofaykaa.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
       </div>
       <p>House of Aykaa<br>Where Stories Are Woven Into Fabric</p>
@@ -381,15 +381,43 @@
     updateCountdown();
     
     // Form submission handling
-    document.querySelector('.email-section button').addEventListener('click', function() {
-      const email = document.querySelector('.email-section input').value;
+    // document.querySelector('.email-section button').addEventListener('click', function() {
+    //   const email = document.querySelector('.email-section input').value;
+    //   if (email && email.includes('@')) {
+    //     alert('Thank you for joining our journey! We\'ll be in touch soon.');
+    //     document.querySelector('.email-section input').value = '';
+    //   } else {
+    //     alert('Please enter a valid email address.');
+    //   }
+    // });
+  </script>
+
+  <script>
+    document.querySelector('.email-section button').addEventListener('click', function () {
+      const email = document.querySelector('.email-section input').value.trim();
+debugger;
       if (email && email.includes('@')) {
-        alert('Thank you for joining our journey! We\'ll be in touch soon.');
-        document.querySelector('.email-section input').value = '';
+        fetch('https://script.google.com/macros/s/AKfycbz84qu7py-48n9x-pyeveq4KZ7ktKAAZteE3zf7wMrBkBO9jtcTAqbosdba_24ZSwKk/exec', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+          },
+          body: 'email=' + encodeURIComponent(email)
+        })
+        .then(response => response.text())
+        .then(data => {
+          alert('Thank you for joining our journey! We\'ll be in touch soon.');
+          document.querySelector('.email-section input').value = '';
+        })
+        .catch(error => {
+          console.error('Error!', error.message);
+          alert('Oops! Something went wrong. Please try again later.');
+        });
       } else {
         alert('Please enter a valid email address.');
       }
     });
   </script>
+
 </body>
 </html>
